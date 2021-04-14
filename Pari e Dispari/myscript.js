@@ -9,16 +9,16 @@ var numeroUmano;
 
 if(pariODispari === "Pari"){
     console.log("Hai selezionato Pari");
-    numeroUmano = parseInt(prompt("Ora scegli che numero Pari vuoi"));
-    while(numeroUmano % 2 != 0){
-        numeroUmano = parseInt(prompt("Il numero non era Pari, rimettilo"));
+    numeroUmano = parseInt(prompt("Ora scegli che numero Pari vuoi tra 1 e 5"));
+    while(numeroUmano % 2 != 0 || numeroUmano < 1 || numeroUmano > 5){
+        numeroUmano = parseInt(prompt("Il numero non era Pari o era fuori range rimettilo"));
     }
     console.log("Il tuo numero è: " + numeroUmano);
 }else if(pariODispari === "Dispari"){
     console.log("Hai selezionato Dispari");
-    numeroUmano = parseInt(prompt("Ora scegli che numero Dispari vuoi"));
-    while(numeroUmano % 2 == 0){
-        numeroUmano = parseInt(prompt("Il numero non era Dispari, rimettilo"));
+    numeroUmano = parseInt(prompt("Ora scegli che numero Dispari vuoi tra 1 e 5"));
+    while(numeroUmano % 2 == 0 || numeroUmano < 1 || numeroUmano > 5){
+        numeroUmano = parseInt(prompt("Il numero non era Dispari o era fuori range rimettilo"));
     }
     console.log("Il tuo numero è: " + numeroUmano);
 }
