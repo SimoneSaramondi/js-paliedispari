@@ -4,24 +4,13 @@ var pariODispari = prompt("Scegli se vuoi immettere un numero Pari o un numero D
 var first = pariODispari.slice(0, 1).toUpperCase();
 var second = pariODispari.slice(1);
 pariODispari = first + second;
+console.log(pariODispari.toString());
 
-var numeroUmano;
-
-if(pariODispari === "Pari"){
-    console.log("Hai selezionato Pari");
-    numeroUmano = parseInt(prompt("Ora scegli che numero Pari vuoi tra 1 e 5"));
-    while(numeroUmano % 2 != 0 || numeroUmano < 1 || numeroUmano > 5){
-        numeroUmano = parseInt(prompt("Il numero non era Pari o era fuori range rimettilo"));
-    }
-    console.log("Il tuo numero è: " + numeroUmano);
-}else if(pariODispari === "Dispari"){
-    console.log("Hai selezionato Dispari");
-    numeroUmano = parseInt(prompt("Ora scegli che numero Dispari vuoi tra 1 e 5"));
-    while(numeroUmano % 2 == 0 || numeroUmano < 1 || numeroUmano > 5){
-        numeroUmano = parseInt(prompt("Il numero non era Dispari o era fuori range rimettilo"));
-    }
-    console.log("Il tuo numero è: " + numeroUmano);
+var numeroUmano = parseInt(prompt("Scegli un numero da 1 a 5"));
+while(numeroUmano < 1 || numeroUmano > 5){
+    numeroUmano = parseInt(prompt("Hai digitato un numero fuori range. Ridigita"));
 }
+console.log("Il numero scelto è: " + numeroUmano);
 
 var numeroComputer = Math.floor(Math.random() * 5) + 1;
 console.log("Il numero del Computer è: " + numeroComputer);
@@ -31,10 +20,16 @@ console.log("La somma dei numeri è: " + somma);
 
 //Funzione che restituisce se la somma è pari o dispari
 function typeNum(numeroSomma){
-    if(numeroSomma % 2 == 0){
-        return console.log("La somma dei numeri è Pari");
-    }else {
-        return console.log("La somma dei numeri è Dispari");
+    if(numeroSomma % 2 == 0 && pariODispari === "Pari"){
+        return console.log("La somma dei numeri è Pari e l'uomo ha vinto");
+    }else if(numeroSomma % 2 == 0 && pariODispari === "Dispari") {
+        return console.log("La somma dei numeri è Pari ma l'uomo ha perso");
+    }
+    else if(numeroSomma % 2 == 1 && pariODispari === "Pari") {
+        return console.log("La somma dei numeri è Dispari ma l'uomo ha perso");
+    }
+    else if(numeroSomma % 2 == 1 && pariODispari === "Dispari") {
+        return console.log("La somma dei numeri è Dispari e l'uomo ha vinto");
     }
 }
 
