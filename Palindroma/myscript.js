@@ -1,4 +1,7 @@
 var parola = prompt("Inserisci una parola");
+// Elimino da una stringa gli spazi
+parola = parola.split(" ").join("");
+console.log(parola);
 parola = parola.toLowerCase();
 console.log(parola.toString());
 
